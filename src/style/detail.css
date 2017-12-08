@@ -1,0 +1,42 @@
+@component-namespace l {
+
+  @b detail {
+
+    @e route {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 2.375rem;
+      background-color: #E65B05;
+      border-radius: 1.1875rem;
+    }
+
+    @e back {
+      width: 0.65625rem;
+      background-image: url("../assets/images/l_rdetail_back.png");
+    }
+
+    @e title {
+      color: white;
+    }
+
+    @e star {
+      width: 1.1875rem;
+      background-image: url("../assets/images/l_rdetail_star.png");
+
+      @when star {
+        background-image: url("../assets/images/l_rdetail_star_solid.png");
+      }
+    }
+
+    @e icon {
+      height: 1.1875rem;
+      padding: 0 1.1875rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+  }
+}

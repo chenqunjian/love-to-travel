@@ -1,0 +1,118 @@
+@component-namespace l {
+
+  @b search {
+
+    @e form {
+      position: relative;
+    }
+
+    @e input {
+      width: 100%;
+      height: 2.375rem;
+      padding: 5px 6.5rem 5px 13px;
+      border: 0.0625rem solid #ee8e52;
+      border-radius: 1.1875rem;
+    }
+
+    @e close {
+      position: absolute;
+      top: 0.625rem;
+      right: 4.75rem;
+      width: 1rem;
+      height: 1rem;
+      background:url("../assets/images/l_route_close.png") no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    @e btn {
+      position: absolute;
+      top: 0.1875rem;
+      right: 0.1875rem;
+      display: block;
+      width: 4rem;
+      height: 2rem;
+      color: white;
+      background-color: #e65b05;
+      border: 0.0625rem solid #e65b05;
+      border-radius: 1.03125rem;
+    }
+
+    @e routes {
+      min-height: 7.8rem;
+    }
+
+    @e result {
+      position: relative;
+      padding-top: 0.4375rem;
+    }
+
+    @e arrow {
+      position: absolute;
+      top: -0.1875rem;
+      left: 2.25rem;
+      triangle: 10px top #f2f2f2;
+    }
+
+    @e go {
+      display: none;
+      position: absolute;
+      right: 0.75rem;
+      top: 0.5625rem;
+      width: 1rem;
+      height: 1rem;
+      background:url("../assets/images/l_route_go.png") no-repeat;
+      background-size: contain;
+    }
+
+    @e list {
+      padding-top: 0.6125rem;
+      padding-bottom: 0.75rem;
+      min-height: 7.3625rem;
+    }
+
+    @e item {
+      position: relative;
+      height: 2rem;
+      padding-left: 1.5rem;
+      line-height: 2rem;
+      font-size: .75rem;
+      color: #333;
+      background-color: #f2f2f2;
+      border-top: 1px solid #fff;
+      cursor: pointer;
+
+      @m first {
+        border-top: none;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+      }
+
+      @m last {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+
+      @when active {
+        color: #E97126;
+
+        .l-search__go {
+          display: block;
+        }
+      }
+    }
+
+    @e not {
+      padding-top: 0.6125rem;
+
+      p {
+        height: 4rem;
+        padding-left: 1.5rem;
+        line-height: 4rem;
+        color: #FA5555;
+        background-color: #f2f2f2;
+        border-radius: .5rem;
+      }
+    }
+  }
+}

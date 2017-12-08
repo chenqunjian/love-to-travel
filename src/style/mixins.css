@@ -1,0 +1,6 @@
+@define-mixin icon $width $height $name {
+  width: $width;
+  height: $height;
+  background: url(../assets/images/$(name).png) no-repeat;
+  background-size: contain;
+}
