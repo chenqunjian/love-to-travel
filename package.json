@@ -10,7 +10,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "filemap": "filemap -i node_modules dist test .git .idea upload"
   },
   "dependencies": {
     "axios": "^0.17.1",

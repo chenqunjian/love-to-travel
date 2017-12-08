@@ -11,10 +11,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      // '/': {
-      //   target: 'http://www.baotoubus.cn/WifiBusInterface/transfer',
-      //   changeOrigin: true
-      // }
+      '/': {
+        target: 'http://www.baotoubus.cn/WifiBusInterface/transfer',
+        changeOrigin: true
+      }
     },
 
     // Various Dev Server settings

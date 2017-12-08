@@ -5,8 +5,7 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
 // Vue.axios.defaults.baseURL = 'http://www.baotoubus.cn/WifiBusInterface/transfer/'
-// Vue.axios.defaults.baseURL = 'http://localhost:3000'
-Vue.axios.defaults.baseURL = 'http://47.93.136.207:8060'
+// Vue.axios.defaults.baseURL = 'http://xx.xx.xx.xx:8060' // 代理地址
 
 export default axios
 
