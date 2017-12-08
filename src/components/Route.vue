@@ -7,7 +7,7 @@
         <button class="l-search__btn" @click="handleSearchKeyword">查询</button>
       </div>
       <div class="l-search__routes">
-        <div class="l-search__result" v-show="searching">
+        <div class="l-search__result" v-show="searching && !loading">
           <i class="l-search__arrow"></i>
           <ul class="l-search__list" v-if="routes.length > 0">
             <li class="l-search__item"
@@ -22,6 +22,7 @@
           </ul>
           <div class="l-search__not" v-else><p>查询不到路线相关信息</p></div>
         </div>
+        <div class="l-search__loading" v-if="loading">正在加载...</div>
       </div>
     </div>
     <div class="l-route__history">
@@ -33,7 +34,7 @@
           :key="bus"
           @click="handleBusClick(bus, index)">{{bus}}路</li>
       </ul>
-      <div class="l-route_not" v-else><p>暂无搜索历史</p></div>
+      <div class="l-route__not" v-else><p>暂无搜索历史</p></div>
     </div>
   </div>
 </template>
@@ -56,6 +57,7 @@ export default {
       currentBus: -1,
       routes: [],
       searching: false,
+      loading: false,
       hasRoute: false
     }
   },
@@ -72,11 +74,14 @@ export default {
     handleSearchKeyword () {
       if (!this.keyword) return
       if (this.keyword === this.lastKeyword) return
-      this.routes.splice(0)
+      if (this.loading) return
+      this.loading = true
       getAllLines({lineName: this.keyword}).then(res => {
         this.searching = true
+        this.loading = false
         this.lastKeyword = this.keyword
 
+        this.routes.splice(0)
         if (!res[0].stations) { // 路线不存在
           this.hasRoute = false
         } else {

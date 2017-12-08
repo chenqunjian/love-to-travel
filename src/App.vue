@@ -40,6 +40,7 @@ html, body {
     @e header {
       flex: 0 0 11.5rem;
       background: url("./assets/images/l_app_banner.jpg") no-repeat;
+      background-size: cover;
     }
 
     @e content {

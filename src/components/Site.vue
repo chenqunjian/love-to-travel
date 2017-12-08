@@ -10,9 +10,9 @@
         <button class="l-search__btn" @click="handleSearchKeyword">查询</button>
       </div>
       <div class="l-search__routes" v-if="searching">
-        <div class="l-search__result" v-show="routes.length > 0">
+        <div class="l-search__result">
           <i class="l-search__arrow"></i>
-          <ul class="l-search__list">
+          <ul class="l-search__list" v-if="routes.length > 0">
             <li class="l-search__item"
               :class="{
                 'l-search__item--first': index === 0,
@@ -22,6 +22,7 @@
               :key="index"
               @click="handleRouteClick(route, index)" v-html="route.hlStationName"></li>
           </ul>
+          <div class="l-search__not" v-else><p>查询不到路线相关信息</p></div>
         </div>
       </div>
     </div>
@@ -120,14 +121,16 @@ export default {
     handleRealtimeSearch () {
       if (!this.keyword) return
       getStationLikeMore({stationName: this.keyword}).then(res => {
-        this.searching = true
         this.routes.splice(0)
-        this.routes = res || []
-        this.routes.map(route => {
-          route.hlStationName = route.stationName
-            .replace(this.keyword, '<span class="is-highlight">' + this.keyword + '</span>')
-          return route
-        })
+        if (this.keyword) {
+          this.searching = true
+          this.routes = res || []
+          this.routes.map(route => {
+            route.hlStationName = route.stationName
+              .replace(this.keyword, '<span class="is-highlight">' + this.keyword + '</span>')
+            return route
+          })
+        }
       })
     },
     handleSearchKeyword () {

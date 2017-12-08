@@ -2,6 +2,11 @@
 
   @b search {
 
+    @e loading {
+      text-align: center;
+      line-height: 2.5rem;
+    }
+
     @e form {
       position: relative;
     }
