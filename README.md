@@ -2,6 +2,20 @@
 
 > 公交查询 APP
 
+## 屏幕截图
+
+使用方式：
+
+![爱出行](screenshots/love-to-travel.gif)
+
+路线查询：
+
+![路线](screenshots/route.png)![路线详情](screenshots/route-detail.png)
+
+站点查询：
+
+![路线](screenshots/site.png)![路线详情](screenshots/site-detail.png)
+
 ## 跨域解决方案
 
 ### 开发模式
